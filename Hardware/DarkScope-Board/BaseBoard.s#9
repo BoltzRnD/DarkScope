@@ -24759,6 +24759,7 @@ super fast rectifier, 2 A</description>
 <part name="GND10" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -25454,6 +25455,9 @@ super fast rectifier, 2 A</description>
 <instance part="GND12" gate="1" x="96.52" y="49.53" smashed="yes">
 <attribute name="VALUE" x="93.98" y="46.99" size="1.778" layer="96"/>
 </instance>
+<instance part="GND13" gate="1" x="20.32" y="66.04" smashed="yes">
+<attribute name="VALUE" x="17.78" y="63.5" size="1.778" layer="96"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -25496,7 +25500,12 @@ super fast rectifier, 2 A</description>
 <segment>
 <pinref part="J1" gate="G$1" pin="1"/>
 <pinref part="D1" gate="G$1" pin="A"/>
-<wire x1="21.59" y1="59.69" x2="26.67" y2="59.69" width="0.1524" layer="91"/>
+<wire x1="21.59" y1="59.69" x2="25.4" y2="59.69" width="0.1524" layer="91"/>
+<pinref part="X2" gate="-2" pin="1"/>
+<wire x1="25.4" y1="59.69" x2="26.67" y2="59.69" width="0.1524" layer="91"/>
+<wire x1="19.05" y1="73.66" x2="25.4" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="25.4" y1="73.66" x2="25.4" y2="59.69" width="0.1524" layer="91"/>
+<junction x="25.4" y="59.69"/>
 </segment>
 </net>
 <net name="N$8" class="0">
@@ -25527,6 +25536,18 @@ super fast rectifier, 2 A</description>
 <segment>
 <pinref part="GND12" gate="1" pin="GND"/>
 <pinref part="C10" gate="G$1" pin="-"/>
+</segment>
+<segment>
+<pinref part="J1" gate="G$1" pin="3"/>
+<wire x1="21.59" y1="54.61" x2="27.94" y2="54.61" width="0.1524" layer="91"/>
+<pinref part="GND8" gate="1" pin="GND"/>
+<wire x1="27.94" y1="54.61" x2="27.94" y2="52.07" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="X2" gate="-1" pin="1"/>
+<wire x1="19.05" y1="71.12" x2="20.32" y2="71.12" width="0.1524" layer="91"/>
+<pinref part="GND13" gate="1" pin="GND"/>
+<wire x1="20.32" y1="71.12" x2="20.32" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$6" class="0">
