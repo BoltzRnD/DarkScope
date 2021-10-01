@@ -7,3 +7,7 @@
 4. High Speed Active Probe(Board 4)
 5. Upto 4 Channel Support (Exposing/Utilizing PA0, PA4, PA5, PA6) (On BaseBoard 1)
 6. (Optional) I2C Based Switch Board.(On BaseBoard 1)
+
+
+Note-
+1. LCD "LED-A" connected to 5V for now, can be chenged to vcc
