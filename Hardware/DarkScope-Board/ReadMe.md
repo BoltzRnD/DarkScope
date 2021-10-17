@@ -10,4 +10,4 @@
 
 
 Note-
-1. LCD "LED-A" connected to 5V for now, can be chenged to vcc
+1. LCD "LED-A" connected to 5V for now, can be changed to vcc
