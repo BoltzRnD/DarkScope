@@ -30261,6 +30261,7 @@ Source: 3M</description>
 <part name="GND35" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="+3V11" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+3V3" device=""/>
 <part name="P+6" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="P-2" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="-5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -32265,6 +32266,9 @@ Source: 3M</description>
 <instance part="P+6" gate="1" x="58.42" y="97.79" smashed="yes">
 <attribute name="VALUE" x="55.88" y="92.71" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="P-2" gate="1" x="64.77" y="97.79" smashed="yes" rot="R180">
+<attribute name="VALUE" x="67.31" y="100.33" size="1.778" layer="96" rot="R270"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -32311,6 +32315,18 @@ Source: 3M</description>
 <wire x1="38.1" y1="81.28" x2="58.42" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="58.42" y1="81.28" x2="58.42" y2="83.82" width="0.1524" layer="91"/>
 <junction x="58.42" y="83.82"/>
+</segment>
+</net>
+<net name="-5V" class="0">
+<segment>
+<pinref part="X4" gate="-6" pin="KL"/>
+<pinref part="P-2" gate="1" pin="-5V"/>
+<wire x1="38.1" y1="76.2" x2="64.77" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="64.77" y1="76.2" x2="64.77" y2="78.74" width="0.1524" layer="91"/>
+<pinref part="X4" gate="-5" pin="KL"/>
+<wire x1="64.77" y1="78.74" x2="64.77" y2="95.25" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="78.74" x2="64.77" y2="78.74" width="0.1524" layer="91"/>
+<junction x="64.77" y="78.74"/>
 </segment>
 </net>
 </nets>

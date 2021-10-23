@@ -30224,8 +30224,6 @@ Source: 3M</description>
 <part name="GND27" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SJ4" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1"/>
 <part name="GND28" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
-<part name="JP1" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
-<part name="JP2" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
 <part name="R9" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="180E"/>
 <part name="P+4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="JMP3" library="jump-0r-smd" library_urn="urn:adsk.eagle:library:251" deviceset="0R-JUMP" device="C" package3d_urn="urn:adsk.eagle:package:15386/1"/>
@@ -31454,14 +31452,6 @@ Source: 3M</description>
 </instance>
 <instance part="GND28" gate="1" x="33.02" y="71.12" smashed="yes" rot="R270">
 <attribute name="VALUE" x="30.48" y="73.66" size="1.778" layer="96" rot="R270"/>
-</instance>
-<instance part="JP1" gate="G$1" x="29.21" y="10.16" smashed="yes">
-<attribute name="NAME" x="22.86" y="15.875" size="1.778" layer="95"/>
-<attribute name="VALUE" x="22.86" y="5.08" size="1.778" layer="96"/>
-</instance>
-<instance part="JP2" gate="G$1" x="43.18" y="10.16" smashed="yes">
-<attribute name="NAME" x="36.83" y="15.875" size="1.778" layer="95"/>
-<attribute name="VALUE" x="36.83" y="5.08" size="1.778" layer="96"/>
 </instance>
 <instance part="R9" gate="G$1" x="82.55" y="58.42" smashed="yes" rot="R180">
 <attribute name="NAME" x="86.36" y="56.9214" size="1.778" layer="95" rot="R180"/>
