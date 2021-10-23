@@ -32332,7 +32332,7 @@ Source: 3M</description>
 <net name="ADCIN" class="0">
 <segment>
 <pinref part="X4" gate="-15" pin="KL"/>
-<wire x1="38.1" y1="53.34" x2="66.04" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="38.1" y1="53.34" x2="64.77" y2="53.34" width="0.1524" layer="91"/>
 <label x="67.31" y="53.34" size="1.778" layer="95"/>
 </segment>
 </net>
@@ -32390,6 +32390,55 @@ Source: 3M</description>
 <wire x1="64.77" y1="73.66" x2="38.1" y2="73.66" width="0.1524" layer="91"/>
 <label x="71.12" y="74.93" size="1.778" layer="95" rot="R180"/>
 <pinref part="X4" gate="-7" pin="KL"/>
+</segment>
+</net>
+<net name="DB3" class="0">
+<segment>
+<wire x1="38.1" y1="50.8" x2="64.77" y2="50.8" width="0.1524" layer="91"/>
+<label x="67.31" y="50.8" size="1.778" layer="95"/>
+<pinref part="X4" gate="-16" pin="KL"/>
+</segment>
+</net>
+<net name="DB4" class="0">
+<segment>
+<wire x1="38.1" y1="48.26" x2="64.77" y2="48.26" width="0.1524" layer="91"/>
+<label x="67.31" y="48.26" size="1.778" layer="95"/>
+<pinref part="X4" gate="-17" pin="KL"/>
+</segment>
+</net>
+<net name="DB5" class="0">
+<segment>
+<wire x1="38.1" y1="45.72" x2="64.77" y2="45.72" width="0.1524" layer="91"/>
+<label x="67.31" y="45.72" size="1.778" layer="95"/>
+<pinref part="X4" gate="-18" pin="KL"/>
+</segment>
+</net>
+<net name="DB6" class="0">
+<segment>
+<wire x1="38.1" y1="43.18" x2="64.77" y2="43.18" width="0.1524" layer="91"/>
+<label x="67.31" y="43.18" size="1.778" layer="95"/>
+<pinref part="X4" gate="-19" pin="KL"/>
+</segment>
+</net>
+<net name="DB7" class="0">
+<segment>
+<wire x1="38.1" y1="40.64" x2="64.77" y2="40.64" width="0.1524" layer="91"/>
+<label x="67.31" y="40.64" size="1.778" layer="95"/>
+<pinref part="X4" gate="-20" pin="KL"/>
+</segment>
+</net>
+<net name="TL_PWM" class="0">
+<segment>
+<wire x1="38.1" y1="38.1" x2="64.77" y2="38.1" width="0.1524" layer="91"/>
+<label x="67.31" y="38.1" size="1.778" layer="95"/>
+<pinref part="X4" gate="-21" pin="KL"/>
+</segment>
+</net>
+<net name="VGEN" class="0">
+<segment>
+<wire x1="38.1" y1="35.56" x2="64.77" y2="35.56" width="0.1524" layer="91"/>
+<label x="67.31" y="35.56" size="1.778" layer="95"/>
+<pinref part="X4" gate="-22" pin="KL"/>
 </segment>
 </net>
 </nets>
