@@ -74,10 +74,6 @@
 </layers>
 <board>
 <plain>
-<wire x1="0" y1="0" x2="101.905" y2="0" width="0" layer="20"/>
-<wire x1="101.905" y1="0" x2="101.905" y2="80" width="0" layer="20"/>
-<wire x1="101.905" y1="80" x2="0" y2="80" width="0" layer="20"/>
-<wire x1="0" y1="80" x2="0" y2="0" width="0" layer="20"/>
 <wire x1="67.31" y1="65.405" x2="67.31" y2="1.27" width="0.1524" layer="25"/>
 <wire x1="67.31" y1="1.27" x2="97.79" y2="1.27" width="0.1524" layer="25"/>
 <wire x1="70.485" y1="33.02" x2="95.885" y2="33.02" width="0.1524" layer="25"/>
@@ -107,6 +103,20 @@
 <wire x1="62.865" y1="3.81" x2="64.77" y2="3.81" width="0.1524" layer="25"/>
 <wire x1="64.77" y1="3.81" x2="64.77" y2="1.27" width="0.1524" layer="25"/>
 <text x="77.47" y="76.835" size="1.778" layer="25">9V Max</text>
+<wire x1="0" y1="0" x2="0" y2="86.995" width="0.1524" layer="20"/>
+<wire x1="0" y1="86.995" x2="15.875" y2="87.63" width="0.1524" layer="20"/>
+<wire x1="15.875" y1="87.63" x2="21.59" y2="81.915" width="0.1524" layer="20"/>
+<wire x1="21.59" y1="81.915" x2="21.59" y2="80.01" width="0.1524" layer="20"/>
+<wire x1="21.59" y1="80.01" x2="78.74" y2="80.01" width="0.1524" layer="20"/>
+<wire x1="78.74" y1="80.01" x2="78.74" y2="82.55" width="0.1524" layer="20"/>
+<wire x1="78.74" y1="82.55" x2="85.09" y2="86.995" width="0.1524" layer="20"/>
+<wire x1="85.09" y1="86.995" x2="99.695" y2="86.995" width="0.1524" layer="20"/>
+<wire x1="99.695" y1="86.995" x2="101.6" y2="86.36" width="0.1524" layer="20"/>
+<wire x1="101.6" y1="86.36" x2="101.6" y2="6.35" width="0.1524" layer="20"/>
+<wire x1="107.95" y1="0" x2="0" y2="0" width="0.1524" layer="20"/>
+<wire x1="101.6" y1="6.35" x2="106.68" y2="6.35" width="0.1524" layer="20"/>
+<wire x1="106.68" y1="6.35" x2="107.95" y2="5.08" width="0.1524" layer="20"/>
+<wire x1="107.95" y1="5.08" x2="107.95" y2="0" width="0.1524" layer="20"/>
 </plain>
 <libraries>
 <library name="rcl" urn="urn:adsk.eagle:library:334">
@@ -3339,9 +3349,10 @@ design rules under a new name.</description>
 <attribute name="VALUE" x="10.795" y="64.135" size="1.27" layer="27"/>
 </element>
 <element name="U$1" library="special-drill" library_urn="urn:adsk.eagle:library:366" package="DRILL_0.1560" value="" x="4.445" y="4.445" smashed="yes"/>
-<element name="U$2" library="special-drill" library_urn="urn:adsk.eagle:library:366" package="DRILL_0.1560" value="" x="2.47865" y="67.02668125" smashed="yes"/>
-<element name="U$3" library="special-drill" library_urn="urn:adsk.eagle:library:366" package="DRILL_0.1560" value="" x="98.425" y="63.5" smashed="yes"/>
-<element name="U$4" library="special-drill" library_urn="urn:adsk.eagle:library:366" package="DRILL_0.1560" value="" x="67.31" y="15.24" smashed="yes"/>
+<element name="U$2" library="special-drill" library_urn="urn:adsk.eagle:library:366" package="DRILL_0.1560" value="" x="5.65365" y="83.53668125" smashed="yes"/>
+<element name="U$3" library="special-drill" library_urn="urn:adsk.eagle:library:366" package="DRILL_0.1560" value="" x="97.155" y="83.185" smashed="yes"/>
+<element name="U$4" library="special-drill" library_urn="urn:adsk.eagle:library:366" package="DRILL_0.1560" value="" x="34.29" y="17.78" smashed="yes"/>
+<element name="U$5" library="special-drill" library_urn="urn:adsk.eagle:library:366" package="DRILL_0.1560" value="" x="104.775" y="3.175" smashed="yes"/>
 </elements>
 <signals>
 <signal name="+3V3">

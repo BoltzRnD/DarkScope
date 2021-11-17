@@ -32434,14 +32434,14 @@ Source: 3M</description>
 <pinref part="X4" gate="-23" pin="KL"/>
 </segment>
 </net>
-<net name="VSENSEL3" class="0">
+<net name="VSENSEL1" class="0">
 <segment>
 <wire x1="38.1" y1="30.48" x2="66.04" y2="30.48" width="0.1524" layer="91"/>
 <pinref part="X4" gate="-24" pin="KL"/>
 <label x="62.23" y="30.48" size="1.778" layer="95"/>
 </segment>
 </net>
-<net name="VSENSEL4" class="0">
+<net name="VSENSEL2" class="0">
 <segment>
 <wire x1="38.1" y1="27.94" x2="66.04" y2="27.94" width="0.1524" layer="91"/>
 <pinref part="X4" gate="-25" pin="KL"/>

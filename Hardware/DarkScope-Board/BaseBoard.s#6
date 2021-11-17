@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.05" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -31026,8 +31026,8 @@ Source: 3M</description>
 <attribute name="VALUE" x="203.962" y="86.36" size="1.778" layer="96" rot="R90"/>
 </instance>
 <instance part="T2" gate="G$1" x="203.2" y="73.66" smashed="yes" rot="MR0">
-<attribute name="NAME" x="213.36" y="81.28" size="1.778" layer="95" rot="MR0"/>
-<attribute name="VALUE" x="213.36" y="78.74" size="1.778" layer="96" rot="MR0"/>
+<attribute name="NAME" x="198.12" y="73.66" size="1.778" layer="95" rot="MR0"/>
+<attribute name="VALUE" x="198.12" y="71.12" size="1.778" layer="96" rot="MR0"/>
 </instance>
 <instance part="R5" gate="G$1" x="210.82" y="63.5" smashed="yes" rot="R90">
 <attribute name="NAME" x="209.3214" y="59.69" size="1.778" layer="95" rot="R90"/>
