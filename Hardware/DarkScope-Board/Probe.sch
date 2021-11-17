@@ -13648,6 +13648,12 @@ naming: grid - package width</description>
 <part name="TP6" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="TP7" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="TP8" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
+<part name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1uF"/>
+<part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1uF"/>
+<part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="P-3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="-5V" device=""/>
+<part name="P-4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="-5V" device=""/>
+<part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13787,6 +13793,9 @@ naming: grid - package width</description>
 </instance>
 <instance part="P-2" gate="1" x="97.79" y="140.97" smashed="yes" rot="R180">
 <attribute name="VALUE" x="100.33" y="143.51" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="P-3" gate="1" x="209.804" y="18.034" smashed="yes" rot="R180">
+<attribute name="VALUE" x="212.344" y="20.574" size="1.778" layer="96" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -14068,6 +14077,9 @@ naming: grid - package width</description>
 <text x="55.88" y="83.82" size="1.778" layer="95">DC</text>
 <text x="55.88" y="78.74" size="1.778" layer="95">AC</text>
 <text x="55.88" y="76.2" size="1.778" layer="95">GND</text>
+<text x="176.53" y="85.344" size="1.778" layer="95">10mV</text>
+<text x="177.038" y="80.01" size="1.778" layer="95">0.1V</text>
+<text x="177.546" y="77.47" size="1.778" layer="95">1V</text>
 </plain>
 <instances>
 <instance part="IC1" gate="A" x="99.06" y="187.96" smashed="yes">
@@ -14172,8 +14184,8 @@ naming: grid - package width</description>
 <attribute name="VALUE" x="128.27" y="46.609" size="1.778" layer="96"/>
 </instance>
 <instance part="C7" gate="G$1" x="121.666" y="41.148" smashed="yes" rot="R270">
-<attribute name="NAME" x="122.047" y="39.624" size="1.778" layer="95" rot="R270"/>
-<attribute name="VALUE" x="116.967" y="39.624" size="1.778" layer="96" rot="R270"/>
+<attribute name="NAME" x="122.809" y="45.212" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="116.967" y="46.736" size="1.778" layer="96" rot="R270"/>
 </instance>
 <instance part="GND4" gate="1" x="145.542" y="5.334" smashed="yes">
 <attribute name="VALUE" x="143.002" y="2.794" size="1.778" layer="96"/>
@@ -14315,6 +14327,23 @@ naming: grid - package width</description>
 <instance part="TP8" gate="G$1" x="397.764" y="84.074" smashed="yes">
 <attribute name="NAME" x="396.494" y="85.344" size="1.778" layer="95"/>
 <attribute name="TP_SIGNAL_NAME" x="399.034" y="82.804" size="1.778" layer="97"/>
+</instance>
+<instance part="C10" gate="G$1" x="198.374" y="35.814" smashed="yes" rot="R270">
+<attribute name="NAME" x="198.755" y="34.29" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="193.675" y="34.29" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="C11" gate="G$1" x="198.882" y="12.446" smashed="yes" rot="R270">
+<attribute name="NAME" x="199.263" y="10.922" size="1.778" layer="95" rot="R270"/>
+<attribute name="VALUE" x="194.183" y="10.922" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="P+1" gate="1" x="188.468" y="40.386" smashed="yes">
+<attribute name="VALUE" x="185.928" y="35.306" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="P-4" gate="1" x="181.102" y="17.526" smashed="yes" rot="R180">
+<attribute name="VALUE" x="183.642" y="20.066" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="GND12" gate="1" x="208.534" y="24.13" smashed="yes" rot="R90">
+<attribute name="VALUE" x="211.074" y="21.59" size="1.778" layer="96" rot="R90"/>
 </instance>
 </instances>
 <busses>
@@ -14487,6 +14516,17 @@ naming: grid - package width</description>
 <pinref part="GND11" gate="1" pin="GND"/>
 <wire x1="398.526" y1="-9.398" x2="398.526" y2="-13.716" width="0.1524" layer="91"/>
 </segment>
+<segment>
+<pinref part="C10" gate="G$1" pin="1"/>
+<wire x1="200.914" y1="35.814" x2="204.216" y2="35.814" width="0.1524" layer="91"/>
+<wire x1="204.216" y1="35.814" x2="204.216" y2="24.13" width="0.1524" layer="91"/>
+<pinref part="C11" gate="G$1" pin="1"/>
+<wire x1="204.216" y1="24.13" x2="204.216" y2="12.446" width="0.1524" layer="91"/>
+<wire x1="204.216" y1="12.446" x2="201.422" y2="12.446" width="0.1524" layer="91"/>
+<pinref part="GND12" gate="1" pin="GND"/>
+<wire x1="205.994" y1="24.13" x2="204.216" y2="24.13" width="0.1524" layer="91"/>
+<junction x="204.216" y="24.13"/>
+</segment>
 </net>
 <net name="N$4" class="0">
 <segment>
@@ -14533,6 +14573,15 @@ naming: grid - package width</description>
 <wire x1="304.292" y1="59.69" x2="304.292" y2="55.626" width="0.1524" layer="91"/>
 <wire x1="304.292" y1="55.626" x2="307.086" y2="55.626" width="0.1524" layer="91"/>
 <junction x="307.086" y="55.626"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="P" pin="V+"/>
+<pinref part="C10" gate="G$1" pin="2"/>
+<wire x1="188.468" y1="31.496" x2="188.468" y2="35.814" width="0.1524" layer="91"/>
+<wire x1="188.468" y1="35.814" x2="193.294" y2="35.814" width="0.1524" layer="91"/>
+<pinref part="P+1" gate="1" pin="+5V"/>
+<wire x1="188.468" y1="37.846" x2="188.468" y2="35.814" width="0.1524" layer="91"/>
+<junction x="188.468" y="35.814"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -14807,6 +14856,16 @@ naming: grid - package width</description>
 <pinref part="P-1" gate="1" pin="-5V"/>
 <wire x1="386.334" y1="56.896" x2="401.828" y2="56.896" width="0.1524" layer="91"/>
 <wire x1="401.828" y1="56.896" x2="401.828" y2="64.77" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="P" pin="V-"/>
+<pinref part="C11" gate="G$1" pin="2"/>
+<wire x1="188.468" y1="16.256" x2="188.468" y2="12.446" width="0.1524" layer="91"/>
+<wire x1="188.468" y1="12.446" x2="193.802" y2="12.446" width="0.1524" layer="91"/>
+<pinref part="P-4" gate="1" pin="-5V"/>
+<wire x1="181.102" y1="14.986" x2="181.102" y2="12.446" width="0.1524" layer="91"/>
+<wire x1="181.102" y1="12.446" x2="188.468" y2="12.446" width="0.1524" layer="91"/>
+<junction x="188.468" y="12.446"/>
 </segment>
 </net>
 <net name="ADCIN" class="0">
