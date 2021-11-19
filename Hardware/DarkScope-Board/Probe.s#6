@@ -13651,6 +13651,8 @@ naming: grid - package width</description>
 <part name="C10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="220pF"/>
 <part name="C11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="220pF"/>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
+<part name="P-3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="-5V" device=""/>
+<part name="P-4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="-5V" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13790,6 +13792,9 @@ naming: grid - package width</description>
 </instance>
 <instance part="P-2" gate="1" x="97.79" y="140.97" smashed="yes" rot="R180">
 <attribute name="VALUE" x="100.33" y="143.51" size="1.778" layer="96" rot="R270"/>
+</instance>
+<instance part="P-3" gate="1" x="209.804" y="18.034" smashed="yes" rot="R180">
+<attribute name="VALUE" x="212.344" y="20.574" size="1.778" layer="96" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -14333,6 +14338,9 @@ naming: grid - package width</description>
 <instance part="P+1" gate="1" x="209.804" y="40.894" smashed="yes">
 <attribute name="VALUE" x="207.264" y="35.814" size="1.778" layer="96" rot="R90"/>
 </instance>
+<instance part="P-4" gate="1" x="209.296" y="19.558" smashed="yes" rot="R180">
+<attribute name="VALUE" x="211.836" y="22.098" size="1.778" layer="96" rot="R270"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -14550,6 +14558,12 @@ naming: grid - package width</description>
 <wire x1="304.292" y1="59.69" x2="304.292" y2="55.626" width="0.1524" layer="91"/>
 <wire x1="304.292" y1="55.626" x2="307.086" y2="55.626" width="0.1524" layer="91"/>
 <junction x="307.086" y="55.626"/>
+</segment>
+<segment>
+<pinref part="C10" gate="G$1" pin="1"/>
+<pinref part="P+1" gate="1" pin="+5V"/>
+<wire x1="200.914" y1="35.814" x2="209.804" y2="35.814" width="0.1524" layer="91"/>
+<wire x1="209.804" y1="35.814" x2="209.804" y2="38.354" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
@@ -14824,6 +14838,12 @@ naming: grid - package width</description>
 <pinref part="P-1" gate="1" pin="-5V"/>
 <wire x1="386.334" y1="56.896" x2="401.828" y2="56.896" width="0.1524" layer="91"/>
 <wire x1="401.828" y1="56.896" x2="401.828" y2="64.77" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C11" gate="G$1" pin="1"/>
+<pinref part="P-4" gate="1" pin="-5V"/>
+<wire x1="201.422" y1="12.446" x2="209.296" y2="12.446" width="0.1524" layer="91"/>
+<wire x1="209.296" y1="12.446" x2="209.296" y2="17.018" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="ADCIN" class="0">

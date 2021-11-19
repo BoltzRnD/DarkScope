@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -13588,7 +13588,7 @@ naming: grid - package width</description>
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="X1" library="con-coax" library_urn="urn:adsk.eagle:library:133" deviceset="?227161*" device="1-" package3d_urn="urn:adsk.eagle:package:6212/1" technology="-0"/>
-<part name="S1" library="SamacSys_Parts" deviceset="EG2301" device=""/>
+<part name="S1" library="SamacSys_Parts" deviceset="EG2301" device="" value="DC-AC-GND"/>
 <part name="TP1" library="testpad" library_urn="urn:adsk.eagle:library:385" deviceset="TP" device="B1,27" package3d_urn="urn:adsk.eagle:package:27944/2"/>
 <part name="C6" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-EU" device="C1206" package3d_urn="urn:adsk.eagle:package:23618/2" value="0.1u"/>
 <part name="GND1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
@@ -13654,6 +13654,7 @@ naming: grid - package width</description>
 <part name="P-3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="-5V" device=""/>
 <part name="P-4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="-5V" device=""/>
 <part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
+<part name="GND13" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14082,9 +14083,9 @@ naming: grid - package width</description>
 <text x="177.546" y="77.47" size="1.778" layer="95">1V</text>
 </plain>
 <instances>
-<instance part="IC1" gate="A" x="99.06" y="187.96" smashed="yes">
-<attribute name="NAME" x="101.6" y="191.135" size="1.778" layer="95"/>
-<attribute name="VALUE" x="101.6" y="182.88" size="1.778" layer="96"/>
+<instance part="IC1" gate="A" x="259.08" y="27.94" smashed="yes">
+<attribute name="NAME" x="261.62" y="31.115" size="1.778" layer="95"/>
+<attribute name="VALUE" x="261.62" y="22.86" size="1.778" layer="96"/>
 </instance>
 <instance part="IC1" gate="B" x="251.968" y="81.026" smashed="yes">
 <attribute name="NAME" x="254.508" y="84.201" size="1.778" layer="95"/>
@@ -14324,9 +14325,9 @@ naming: grid - package width</description>
 <attribute name="NAME" x="373.888" y="-3.048" size="1.778" layer="95" rot="R90"/>
 <attribute name="TP_SIGNAL_NAME" x="376.428" y="-0.508" size="1.778" layer="97" rot="R90"/>
 </instance>
-<instance part="TP8" gate="G$1" x="397.764" y="84.074" smashed="yes">
-<attribute name="NAME" x="396.494" y="85.344" size="1.778" layer="95"/>
-<attribute name="TP_SIGNAL_NAME" x="399.034" y="82.804" size="1.778" layer="97"/>
+<instance part="TP8" gate="G$1" x="397.764" y="86.614" smashed="yes">
+<attribute name="NAME" x="396.494" y="87.884" size="1.778" layer="95"/>
+<attribute name="TP_SIGNAL_NAME" x="399.034" y="85.344" size="1.778" layer="97"/>
 </instance>
 <instance part="C10" gate="G$1" x="198.374" y="35.814" smashed="yes" rot="R270">
 <attribute name="NAME" x="198.755" y="34.29" size="1.778" layer="95" rot="R270"/>
@@ -14344,6 +14345,9 @@ naming: grid - package width</description>
 </instance>
 <instance part="GND12" gate="1" x="208.534" y="24.13" smashed="yes" rot="R90">
 <attribute name="VALUE" x="211.074" y="21.59" size="1.778" layer="96" rot="R90"/>
+</instance>
+<instance part="GND13" gate="1" x="244.094" y="30.48" smashed="yes" rot="R270">
+<attribute name="VALUE" x="241.554" y="33.02" size="1.778" layer="96" rot="R270"/>
 </instance>
 </instances>
 <busses>
@@ -14526,6 +14530,11 @@ naming: grid - package width</description>
 <pinref part="GND12" gate="1" pin="GND"/>
 <wire x1="205.994" y1="24.13" x2="204.216" y2="24.13" width="0.1524" layer="91"/>
 <junction x="204.216" y="24.13"/>
+</segment>
+<segment>
+<pinref part="IC1" gate="A" pin="+IN"/>
+<pinref part="GND13" gate="1" pin="GND"/>
+<wire x1="251.46" y1="30.48" x2="246.634" y2="30.48" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$4" class="0">
@@ -14905,10 +14914,13 @@ naming: grid - package width</description>
 <wire x1="397.764" y1="73.152" x2="397.764" y2="81.28" width="0.1524" layer="91"/>
 <wire x1="397.764" y1="81.28" x2="391.16" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="R22" gate="G$1" pin="1"/>
-<wire x1="403.098" y1="81.28" x2="397.764" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="403.098" y1="81.28" x2="398.78" y2="81.28" width="0.1524" layer="91"/>
 <junction x="397.764" y="81.28"/>
 <wire x1="409.956" y1="73.152" x2="397.764" y2="73.152" width="0.1524" layer="91"/>
 <junction x="397.764" y="73.152"/>
+<pinref part="TP8" gate="G$1" pin="TP"/>
+<wire x1="397.764" y1="84.074" x2="397.764" y2="81.28" width="0.1524" layer="91"/>
+<wire x1="397.764" y1="81.28" x2="398.78" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$24" class="0">
@@ -14953,6 +14965,17 @@ naming: grid - package width</description>
 <pinref part="R25" gate="G$1" pin="2"/>
 <wire x1="424.434" y1="30.226" x2="430.784" y2="30.226" width="0.1524" layer="91"/>
 <label x="427.228" y="30.48" size="1.778" layer="95"/>
+</segment>
+</net>
+<net name="N$21" class="0">
+<segment>
+<pinref part="IC1" gate="A" pin="-IN"/>
+<wire x1="251.46" y1="25.4" x2="245.872" y2="25.4" width="0.1524" layer="91"/>
+<wire x1="245.872" y1="25.4" x2="245.872" y2="17.526" width="0.1524" layer="91"/>
+<wire x1="245.872" y1="17.526" x2="274.32" y2="17.526" width="0.1524" layer="91"/>
+<wire x1="274.32" y1="17.526" x2="274.32" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="A" pin="OUT"/>
+<wire x1="274.32" y1="27.94" x2="266.7" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 </nets>
