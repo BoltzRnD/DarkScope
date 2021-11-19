@@ -14551,6 +14551,12 @@ naming: grid - package width</description>
 <wire x1="304.292" y1="55.626" x2="307.086" y2="55.626" width="0.1524" layer="91"/>
 <junction x="307.086" y="55.626"/>
 </segment>
+<segment>
+<pinref part="C10" gate="G$1" pin="1"/>
+<pinref part="P+1" gate="1" pin="+5V"/>
+<wire x1="200.914" y1="35.814" x2="209.804" y2="35.814" width="0.1524" layer="91"/>
+<wire x1="209.804" y1="35.814" x2="209.804" y2="38.354" width="0.1524" layer="91"/>
+</segment>
 </net>
 <net name="N$3" class="0">
 <segment>

@@ -13653,6 +13653,7 @@ naming: grid - package width</description>
 <part name="P+1" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="+5V" device=""/>
 <part name="P-3" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="-5V" device=""/>
 <part name="P-4" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="-5V" device=""/>
+<part name="GND12" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -14341,6 +14342,9 @@ naming: grid - package width</description>
 <instance part="P-4" gate="1" x="181.102" y="17.526" smashed="yes" rot="R180">
 <attribute name="VALUE" x="183.642" y="20.066" size="1.778" layer="96" rot="R270"/>
 </instance>
+<instance part="GND12" gate="1" x="208.534" y="24.13" smashed="yes" rot="R90">
+<attribute name="VALUE" x="211.074" y="21.59" size="1.778" layer="96" rot="R90"/>
+</instance>
 </instances>
 <busses>
 </busses>
@@ -14511,6 +14515,17 @@ naming: grid - package width</description>
 <pinref part="C9" gate="G$1" pin="2"/>
 <pinref part="GND11" gate="1" pin="GND"/>
 <wire x1="398.526" y1="-9.398" x2="398.526" y2="-13.716" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="C10" gate="G$1" pin="1"/>
+<wire x1="200.914" y1="35.814" x2="204.216" y2="35.814" width="0.1524" layer="91"/>
+<wire x1="204.216" y1="35.814" x2="204.216" y2="24.13" width="0.1524" layer="91"/>
+<pinref part="C11" gate="G$1" pin="1"/>
+<wire x1="204.216" y1="24.13" x2="204.216" y2="12.446" width="0.1524" layer="91"/>
+<wire x1="204.216" y1="12.446" x2="201.422" y2="12.446" width="0.1524" layer="91"/>
+<pinref part="GND12" gate="1" pin="GND"/>
+<wire x1="205.994" y1="24.13" x2="204.216" y2="24.13" width="0.1524" layer="91"/>
+<junction x="204.216" y="24.13"/>
 </segment>
 </net>
 <net name="N$4" class="0">
