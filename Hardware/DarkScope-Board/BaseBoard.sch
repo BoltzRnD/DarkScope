@@ -32535,6 +32535,46 @@ Source: 3M</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,1,128.27,128.27,U1,VDDA,N$1,,,"/>
+<approved hash="104,1,128.27,123.19,U1,VDD_1,+3V3,,,"/>
+<approved hash="104,1,128.27,120.65,U1,VDD_2,+3V3,,,"/>
+<approved hash="104,1,128.27,125.73,U1,VBAT,+3V3,,,"/>
+<approved hash="104,1,128.27,118.11,U1,VDD_3,+3V3,,,"/>
+<approved hash="104,1,128.27,52.07,U1,VSSA,GND,,,"/>
+<approved hash="104,1,128.27,46.99,U1,VSS_2,GND,,,"/>
+<approved hash="104,1,128.27,49.53,U1,VSS_1,GND,,,"/>
+<approved hash="104,1,128.27,44.45,U1,VSS_3,GND,,,"/>
+<approved hash="106,3,46.99,58.42,LED-K1,,,,,"/>
+<approved hash="106,3,62.23,76.2,N$14,,,,,"/>
+<approved hash="106,3,62.23,73.66,N$15,,,,,"/>
+<approved hash="106,3,62.23,63.5,N$19,,,,,"/>
+<approved hash="106,3,62.23,60.96,N$20,,,,,"/>
+<approved hash="106,3,62.23,50.8,N$28,,,,,"/>
+<approved hash="106,3,62.23,33.02,N$35,,,,,"/>
+<approved hash="106,3,62.23,30.48,N$36,,,,,"/>
+<approved hash="106,3,62.23,27.94,N$37,,,,,"/>
+<approved hash="106,3,46.99,76.2,N$38,,,,,"/>
+<approved hash="106,3,46.99,73.66,N$39,,,,,"/>
+<approved hash="106,5,20.32,71.12,N$41,,,,,"/>
+<approved hash="106,5,20.32,73.66,N$42,,,,,"/>
+<approved hash="106,3,46.99,60.96,N$44,,,,,"/>
+<approved hash="106,3,46.99,33.02,N$55,,,,,"/>
+<approved hash="106,3,46.99,30.48,N$56,,,,,"/>
+<approved hash="106,3,46.99,27.94,N$57,,,,,"/>
+<approved hash="113,1,46.99,119.72,SJ1,,,,,"/>
+<approved hash="113,1,31.75,101.895,S1,,,,,"/>
+<approved hash="113,1,172.72,143.85,SJ2,,,,,"/>
+<approved hash="113,1,46.99,73.9817,LED1,,,,,"/>
+<approved hash="113,2,83.82,68.9204,SJ3,,,,,"/>
+<approved hash="113,3,54.3374,50.5104,LCDHEADER,,,,,"/>
+<approved hash="113,3,30.48,65.1104,SJ4,,,,,"/>
+<approved hash="113,3,28.8696,48.26,SJ5,,,,,"/>
+<approved hash="113,4,41.6729,111.986,JP3,,,,,"/>
+<approved hash="113,4,40.7706,86.1339,SIGGEN,,,,,"/>
+<approved hash="113,4,41.6729,67.0839,UART,,,,,"/>
+<approved hash="113,5,20.0829,60.7339,JP6,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
