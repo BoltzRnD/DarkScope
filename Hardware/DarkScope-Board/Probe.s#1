@@ -6,7 +6,7 @@
 <setting alwaysvectorfont="no"/>
 <setting verticaltext="up"/>
 </settings>
-<grid distance="0.1" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
+<grid distance="0.01" unitdist="inch" unit="inch" style="lines" multiple="1" display="no" altdistance="0.01" altunitdist="inch" altunit="inch"/>
 <layers>
 <layer number="1" name="Top" color="4" fill="1" visible="no" active="no"/>
 <layer number="2" name="Route2" color="1" fill="3" visible="no" active="no"/>
@@ -14560,6 +14560,7 @@ naming: grid - package width</description>
 <pinref part="P+2" gate="1" pin="+5V"/>
 <wire x1="47.244" y1="58.42" x2="47.244" y2="54.61" width="0.1524" layer="91"/>
 <wire x1="47.244" y1="54.61" x2="52.07" y2="54.61" width="0.1524" layer="91"/>
+<junction x="52.07" y="54.61"/>
 </segment>
 <segment>
 <pinref part="R9" gate="G$1" pin="1"/>
@@ -14766,25 +14767,6 @@ naming: grid - package width</description>
 <wire x1="232.664" y1="83.566" x2="244.348" y2="83.566" width="0.1524" layer="91"/>
 </segment>
 </net>
-<net name="N$15" class="0">
-<segment>
-<pinref part="IC1" gate="B" pin="-IN"/>
-<wire x1="244.348" y1="78.486" x2="234.188" y2="78.486" width="0.1524" layer="91"/>
-<wire x1="234.188" y1="78.486" x2="234.188" y2="69.342" width="0.1524" layer="91"/>
-<wire x1="234.188" y1="69.342" x2="269.24" y2="69.342" width="0.1524" layer="91"/>
-<wire x1="269.24" y1="69.342" x2="269.24" y2="81.026" width="0.1524" layer="91"/>
-<pinref part="IC1" gate="B" pin="OUT"/>
-<wire x1="259.588" y1="81.026" x2="269.24" y2="81.026" width="0.1524" layer="91"/>
-<pinref part="R15" gate="G$1" pin="2"/>
-<pinref part="TP5" gate="G$1" pin="TP"/>
-<wire x1="284.734" y1="99.568" x2="284.734" y2="95.504" width="0.1524" layer="91"/>
-<wire x1="284.734" y1="95.504" x2="284.734" y2="91.948" width="0.1524" layer="91"/>
-<wire x1="269.24" y1="81.026" x2="269.24" y2="95.504" width="0.1524" layer="91"/>
-<wire x1="269.24" y1="95.504" x2="284.734" y2="95.504" width="0.1524" layer="91"/>
-<junction x="269.24" y="81.026"/>
-<junction x="284.734" y="95.504"/>
-</segment>
-</net>
 <net name="N$17" class="0">
 <segment>
 <pinref part="R17" gate="G$1" pin="1"/>
@@ -14800,14 +14782,25 @@ naming: grid - package width</description>
 </net>
 <net name="N$18" class="0">
 <segment>
-<wire x1="285.242" y1="95.504" x2="306.578" y2="95.504" width="0.1524" layer="91"/>
-<wire x1="306.578" y1="95.504" x2="306.578" y2="85.09" width="0.1524" layer="91"/>
-</segment>
-</net>
-<net name="N$19" class="0">
-<segment>
+<wire x1="269.24" y1="95.504" x2="284.734" y2="95.504" width="0.1524" layer="91"/>
+<wire x1="284.734" y1="95.504" x2="306.578" y2="95.504" width="0.1524" layer="91"/>
+<wire x1="306.578" y1="95.504" x2="306.578" y2="84.836" width="0.1524" layer="91"/>
 <pinref part="S3" gate="G$1" pin="1"/>
 <wire x1="306.578" y1="84.836" x2="317.246" y2="84.836" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="B" pin="-IN"/>
+<wire x1="244.348" y1="78.486" x2="234.188" y2="78.486" width="0.1524" layer="91"/>
+<wire x1="234.188" y1="78.486" x2="234.188" y2="69.342" width="0.1524" layer="91"/>
+<wire x1="234.188" y1="69.342" x2="269.24" y2="69.342" width="0.1524" layer="91"/>
+<wire x1="269.24" y1="69.342" x2="269.24" y2="81.026" width="0.1524" layer="91"/>
+<pinref part="IC1" gate="B" pin="OUT"/>
+<wire x1="259.588" y1="81.026" x2="269.24" y2="81.026" width="0.1524" layer="91"/>
+<wire x1="269.24" y1="81.026" x2="269.24" y2="95.504" width="0.1524" layer="91"/>
+<junction x="269.24" y="81.026"/>
+<pinref part="R15" gate="G$1" pin="2"/>
+<pinref part="TP5" gate="G$1" pin="TP"/>
+<wire x1="284.734" y1="99.568" x2="284.734" y2="95.504" width="0.1524" layer="91"/>
+<junction x="284.734" y="95.504"/>
+<wire x1="284.734" y1="95.504" x2="284.734" y2="91.948" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$10" class="0">
@@ -14981,6 +14974,35 @@ naming: grid - package width</description>
 </nets>
 </sheet>
 </sheets>
+<errors>
+<approved hash="104,2,188.468,31.496,IC1P,V+,+5V,,,"/>
+<approved hash="104,2,188.468,16.256,IC1P,V-,-5V,,,"/>
+<approved hash="106,1,71.12,66.04,ADCIN2,,,,,"/>
+<approved hash="106,1,71.12,63.5,ADCIN3,,,,,"/>
+<approved hash="106,1,71.12,78.74,BTN1,,,,,"/>
+<approved hash="106,1,71.12,81.28,BTN2,,,,,"/>
+<approved hash="106,1,71.12,83.82,BTN3,,,,,"/>
+<approved hash="106,1,71.12,86.36,BTN4,,,,,"/>
+<approved hash="106,1,71.12,116.84,DB0,,,,,"/>
+<approved hash="106,1,71.12,114.3,DB1,,,,,"/>
+<approved hash="106,1,71.12,111.76,DB2,,,,,"/>
+<approved hash="106,1,71.12,109.22,DB3,,,,,"/>
+<approved hash="106,1,71.12,106.68,DB4,,,,,"/>
+<approved hash="106,1,71.12,104.14,DB5,,,,,"/>
+<approved hash="106,1,71.12,101.6,DB6,,,,,"/>
+<approved hash="106,1,71.12,99.06,DB7,,,,,"/>
+<approved hash="106,1,71.12,91.44,LCD_NRD,,,,,"/>
+<approved hash="106,1,71.12,88.9,LCD_NRESET,,,,,"/>
+<approved hash="106,1,71.12,50.8,RX1,,,,,"/>
+<approved hash="106,1,71.12,40.64,SWCLK,,,,,"/>
+<approved hash="106,1,71.12,43.18,SWDIO,,,,,"/>
+<approved hash="106,1,71.12,58.42,TESTSIG,,,,,"/>
+<approved hash="106,1,71.12,53.34,TX1,,,,,"/>
+<approved hash="106,1,71.12,48.26,USBDM,,,,,"/>
+<approved hash="106,1,71.12,45.72,USBDP,,,,,"/>
+<approved hash="106,1,71.12,60.96,V-MON,,,,,"/>
+<approved hash="106,1,71.12,93.98,VGEN,,,,,"/>
+</errors>
 </schematic>
 </drawing>
 <compatibility>
