@@ -32567,6 +32567,7 @@ Source: 3M</description>
 <approved hash="113,1,172.72,143.85,SJ2,,,,,"/>
 <approved hash="113,1,46.99,73.9817,LED1,,,,,"/>
 <approved hash="113,2,83.82,68.9204,SJ3,,,,,"/>
+<approved hash="113,2,200.66,106.731,T1,,,,,"/>
 <approved hash="113,3,54.3374,50.5104,LCDHEADER,,,,,"/>
 <approved hash="113,3,30.48,65.1104,SJ4,,,,,"/>
 <approved hash="113,3,28.8696,48.26,SJ5,,,,,"/>
