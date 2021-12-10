@@ -30231,8 +30231,8 @@ Source: 3M</description>
 <part name="GND29" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="SJ5" library="jumper" library_urn="urn:adsk.eagle:library:252" deviceset="SJ" device="" package3d_urn="urn:adsk.eagle:package:15471/1"/>
 <part name="JP3" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X4" device="" package3d_urn="urn:adsk.eagle:package:22407/2"/>
-<part name="JP4" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
-<part name="JP5" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X3" device="" package3d_urn="urn:adsk.eagle:package:22458/2"/>
+<part name="SIGGEN" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X2" device="" package3d_urn="urn:adsk.eagle:package:22435/2"/>
+<part name="UART" library="pinhead" library_urn="urn:adsk.eagle:library:325" deviceset="PINHD-1X3" device="" package3d_urn="urn:adsk.eagle:package:22458/2"/>
 <part name="GND30" library="supply1" library_urn="urn:adsk.eagle:library:371" deviceset="GND" device=""/>
 <part name="R10" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1K"/>
 <part name="R11" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="R-US_" device="R0805" package3d_urn="urn:adsk.eagle:package:23553/2" value="1K"/>
@@ -31780,11 +31780,11 @@ Source: 3M</description>
 <attribute name="NAME" x="45.72" y="117.475" size="1.778" layer="95" rot="MR0"/>
 <attribute name="VALUE" x="45.72" y="101.6" size="1.778" layer="96" rot="MR0"/>
 </instance>
-<instance part="JP4" gate="G$1" x="39.37" y="88.9" smashed="yes" rot="R180">
+<instance part="SIGGEN" gate="G$1" x="39.37" y="88.9" smashed="yes" rot="R180">
 <attribute name="NAME" x="45.72" y="83.185" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="45.72" y="93.98" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="JP5" gate="A" x="39.37" y="68.58" smashed="yes" rot="R180">
+<instance part="UART" gate="A" x="39.37" y="68.58" smashed="yes" rot="R180">
 <attribute name="NAME" x="45.72" y="62.865" size="1.778" layer="95" rot="R180"/>
 <attribute name="VALUE" x="45.72" y="76.2" size="1.778" layer="96" rot="R180"/>
 </instance>
@@ -31862,7 +31862,7 @@ Source: 3M</description>
 <nets>
 <net name="GND" class="0">
 <segment>
-<pinref part="JP5" gate="A" pin="1"/>
+<pinref part="UART" gate="A" pin="1"/>
 <pinref part="GND30" gate="1" pin="GND"/>
 <wire x1="41.91" y1="66.04" x2="59.69" y2="66.04" width="0.1524" layer="91"/>
 <wire x1="59.69" y1="66.04" x2="59.69" y2="63.5" width="0.1524" layer="91"/>
@@ -31884,14 +31884,14 @@ Source: 3M</description>
 </net>
 <net name="N$8" class="0">
 <segment>
-<pinref part="JP5" gate="A" pin="2"/>
+<pinref part="UART" gate="A" pin="2"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 <wire x1="41.91" y1="68.58" x2="62.23" y2="68.58" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$18" class="0">
 <segment>
-<pinref part="JP5" gate="A" pin="3"/>
+<pinref part="UART" gate="A" pin="3"/>
 <pinref part="R11" gate="G$1" pin="2"/>
 <wire x1="41.91" y1="71.12" x2="68.58" y2="71.12" width="0.1524" layer="91"/>
 </segment>
@@ -31914,10 +31914,10 @@ Source: 3M</description>
 </net>
 <net name="N$25" class="0">
 <segment>
-<pinref part="JP4" gate="G$1" pin="2"/>
+<pinref part="SIGGEN" gate="G$1" pin="2"/>
 <pinref part="R12" gate="G$1" pin="2"/>
 <wire x1="41.91" y1="88.9" x2="53.34" y2="88.9" width="0.1524" layer="91"/>
-<pinref part="JP4" gate="G$1" pin="1"/>
+<pinref part="SIGGEN" gate="G$1" pin="1"/>
 <wire x1="53.34" y1="88.9" x2="59.69" y2="88.9" width="0.1524" layer="91"/>
 <wire x1="41.91" y1="86.36" x2="53.34" y2="86.36" width="0.1524" layer="91"/>
 <wire x1="53.34" y1="86.36" x2="53.34" y2="88.9" width="0.1524" layer="91"/>
