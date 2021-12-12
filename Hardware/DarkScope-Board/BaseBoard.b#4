@@ -3,7 +3,7 @@
 <eagle version="9.5.1">
 <drawing>
 <settings>
-<setting alwaysvectorfont="no"/>
+<setting alwaysvectorfont="yes"/>
 <setting verticaltext="up"/>
 </settings>
 <grid distance="25" unitdist="mil" unit="mm" style="lines" multiple="1" display="no" altdistance="5" altunitdist="mil" altunit="mil"/>
@@ -3175,7 +3175,7 @@ design rules under a new name.</description>
 <attribute name="POPULARITY" value="33" x="-106.68" y="8.89" size="1.778" layer="27" rot="R270" display="off"/>
 <attribute name="VALUE" x="2.54" y="33.8899" size="0.02" layer="27" rot="R270"/>
 </element>
-<element name="T1" library="transistor" library_urn="urn:adsk.eagle:library:402" package="TO92" package3d_urn="urn:adsk.eagle:package:28523/2" value="" x="78.105" y="17.78" smashed="yes" rot="R90">
+<element name="T1" library="transistor" library_urn="urn:adsk.eagle:library:402" package="TO92" package3d_urn="urn:adsk.eagle:package:28523/2" value="8550" x="78.105" y="17.78" smashed="yes" rot="R90">
 <attribute name="NAME" x="81.28" y="14.605" size="1.27" layer="25" ratio="10" rot="R90"/>
 <attribute name="POPULARITY" value="0" x="177.165" y="73.66" size="1.778" layer="27" rot="R90" display="off"/>
 <attribute name="VALUE" x="79.375" y="20.955" size="1.27" layer="27" ratio="10" rot="R90"/>
@@ -3524,8 +3524,6 @@ design rules under a new name.</description>
 <contactref element="TP11" pad="TP"/>
 <contactref element="T2" pad="1"/>
 <contactref element="R5" pad="1"/>
-<contactref element="C14" pad="-"/>
-<contactref element="C15" pad="-"/>
 <contactref element="IC3" pad="1"/>
 <contactref element="L4" pad="2"/>
 <contactref element="TP14" pad="TP"/>
@@ -3613,11 +3611,9 @@ design rules under a new name.</description>
 <wire x1="46.5" y1="49.25" x2="46.725" y2="49.24" width="0.2032" layer="1"/>
 <wire x1="98.5" y1="26" x2="98.5" y2="29" width="0.2032" layer="1"/>
 <wire x1="98.5" y1="29" x2="98.425" y2="29.21" width="0.2032" layer="1"/>
-<wire x1="98.5" y1="26" x2="98.425" y2="25.995" width="0.2032" layer="1"/>
 <wire x1="93.75" y1="25.75" x2="91" y2="23" width="0.2032" layer="1"/>
 <wire x1="98.25" y1="25.75" x2="93.75" y2="25.75" width="0.2032" layer="1"/>
 <wire x1="91" y1="23" x2="90.805" y2="22.86" width="0.2032" layer="1"/>
-<wire x1="98.25" y1="25.75" x2="98.425" y2="25.995" width="0.2032" layer="1"/>
 <wire x1="37.5" y1="32.25" x2="37.5" y2="30" width="0.2032" layer="1"/>
 <wire x1="37.5" y1="30" x2="37.335" y2="29.845" width="0.2032" layer="1"/>
 <wire x1="37.5" y1="32.25" x2="37.335" y2="32.385" width="0.2032" layer="1"/>
@@ -3743,7 +3739,6 @@ design rules under a new name.</description>
 <wire x1="87.5" y1="12.5" x2="90" y2="15" width="0.2032" layer="1"/>
 <wire x1="83.75" y1="12.5" x2="87.5" y2="12.5" width="0.2032" layer="1"/>
 <wire x1="81.25" y1="10" x2="83.75" y2="12.5" width="0.2032" layer="1"/>
-<wire x1="90" y1="15" x2="90.17" y2="15.2" width="0.2032" layer="1"/>
 <wire x1="71" y1="11.5" x2="71" y2="16.5" width="0.2032" layer="1"/>
 <wire x1="71" y1="16.5" x2="71.12" y2="16.51" width="0.2032" layer="1"/>
 <wire x1="71" y1="11.5" x2="70.805" y2="11.43" width="0.2032" layer="1"/>
@@ -3763,7 +3758,6 @@ design rules under a new name.</description>
 <wire x1="89.5" y1="15.25" x2="79.5" y2="25.25" width="0.2032" layer="1"/>
 <wire x1="90" y1="15.25" x2="89.5" y2="15.25" width="0.2032" layer="1"/>
 <wire x1="79.5" y1="25.25" x2="79.415" y2="25.4" width="0.2032" layer="1"/>
-<wire x1="90" y1="15.25" x2="90.17" y2="15.2" width="0.2032" layer="1"/>
 <via x="59" y="56.75" extent="1-16" drill="0.35"/>
 <via x="40.75" y="49.75" extent="1-16" drill="0.35"/>
 <via x="40.75" y="46.25" extent="1-16" drill="0.35"/>
@@ -3784,6 +3778,10 @@ design rules under a new name.</description>
 <vertex x="100.965" y="0"/>
 <vertex x="100.965" y="79.375"/>
 </polygon>
+<contactref element="C15" pad="+"/>
+<contactref element="C14" pad="+"/>
+<wire x1="98.25" y1="25.75" x2="98.425" y2="20.995" width="0" layer="19" extent="1-1"/>
+<wire x1="90.17" y1="10.2" x2="90" y2="15" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$1">
 <contactref element="U1" pad="9"/>
@@ -5029,20 +5027,19 @@ design rules under a new name.</description>
 <signal name="N$12">
 <contactref element="D2" pad="A"/>
 <contactref element="L3" pad="1"/>
-<contactref element="C14" pad="+"/>
 <wire x1="89" y1="9" x2="90" y2="10" width="0.2032" layer="1"/>
 <wire x1="85.75" y1="9" x2="89" y2="9" width="0.2032" layer="1"/>
-<wire x1="90" y1="10" x2="90.17" y2="10.2" width="0.2032" layer="1"/>
 <wire x1="85.75" y1="9" x2="85.725" y2="8.89" width="0.2032" layer="1"/>
 <wire x1="97.5" y1="10" x2="97.75" y2="9.75" width="0.2032" layer="1"/>
 <wire x1="90.25" y1="10" x2="97.5" y2="10" width="0.2032" layer="1"/>
 <wire x1="97.75" y1="9.75" x2="97.79" y2="9.525" width="0.2032" layer="1"/>
-<wire x1="90.25" y1="10" x2="90.17" y2="10.2" width="0.2032" layer="1"/>
+<contactref element="C14" pad="-"/>
+<wire x1="90.25" y1="10" x2="90.17" y2="15.2" width="0" layer="19" extent="1-1"/>
+<wire x1="90" y1="10" x2="90.25" y2="10" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="N$13">
 <contactref element="L3" pad="2"/>
 <contactref element="IC3" pad="2"/>
-<contactref element="C15" pad="+"/>
 <contactref element="TP12" pad="TP"/>
 <contactref element="R8" pad="2"/>
 <wire x1="89" y1="24.25" x2="89" y2="27.75" width="0.2032" layer="1"/>
@@ -5055,11 +5052,12 @@ design rules under a new name.</description>
 <wire x1="96.25" y1="4.5" x2="96.2" y2="4.445" width="0.2032" layer="1"/>
 <wire x1="98" y1="14.5" x2="97.79" y2="14.605" width="0.2032" layer="1"/>
 <wire x1="98.5" y1="14.5" x2="98.5" y2="20.75" width="0.2032" layer="1"/>
-<wire x1="98.5" y1="20.75" x2="98.425" y2="20.995" width="0.2032" layer="1"/>
 <wire x1="89" y1="21" x2="89" y2="24" width="0.2032" layer="1"/>
 <wire x1="98.25" y1="21" x2="89" y2="21" width="0.2032" layer="1"/>
 <wire x1="89" y1="24" x2="88.9" y2="24.13" width="0.2032" layer="1"/>
-<wire x1="98.25" y1="21" x2="98.425" y2="20.995" width="0.2032" layer="1"/>
+<contactref element="C15" pad="-"/>
+<wire x1="98.25" y1="21" x2="98.425" y2="25.995" width="0" layer="19" extent="1-1"/>
+<wire x1="98.5" y1="20.75" x2="98.25" y2="21" width="0" layer="19" extent="1-1"/>
 </signal>
 <signal name="-5V">
 <contactref element="IC3" pad="3"/>
