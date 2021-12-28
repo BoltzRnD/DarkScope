@@ -21,6 +21,10 @@ class Window(QDialog):
     mult1 = 0.010
     mult2 = 1
 
+    adcmultMap = [5, 2, 1, 0.5, 0.2, 0.1, 0.05, 0.02, 0.01]
+    adcMultiplier = [0.05085, 0.02034, 0.01017, 0.005085, 0.002034, 0.001017, 0.5085, 0.2034, 0.1017]
+    mulIndex = 0
+
     graphdata = []
 
     def closeEvent(self, a0: QtGui.QCloseEvent) -> None:
@@ -58,19 +62,24 @@ class Window(QDialog):
             pass
 
     def updateGraphLimits(self):
-        if(self.sense1 == 0):
-            self.mult1 = 0.010
-        elif(self.sense1 == 1):
-            self.mult1 = 0.1
-        elif(self.sense1 == 2):
-            self.mult1 = 1
-
-        if(self.sense2 == 0):
-            self.mult2 = 1
-        elif(self.sense2 == 1):
-            self.mult2 = 2
-        elif(self.sense2 == 2):
-            self.mult2 = 5
+        if(self.sense1 == 0 and self.sense2 == 0):
+            self.mulIndex = 8
+        elif(self.sense1 == 0 and self.sense2 == 1):
+            self.mulIndex = 7
+        elif(self.sense1 == 0 and self.sense2 == 2):
+            self.mulIndex = 6
+        elif(self.sense1 == 1 and self.sense2 == 0):
+            self.mulIndex = 5
+        elif(self.sense1 == 1 and self.sense2 == 1):
+            self.mulIndex = 4
+        elif(self.sense1 == 1 and self.sense2 == 2):
+            self.mulIndex = 3
+        elif(self.sense1 == 2 and self.sense2 == 0):
+            self.mulIndex = 2
+        elif(self.sense1 == 2 and self.sense2 == 1):
+            self.mulIndex = 1
+        elif(self.sense1 == 2 and self.sense2 == 2):
+            self.mulIndex = 0
 
         # plt.ylim([-1 * self.mult1 * self.mult2, self.mult1 * self.mult2])
 
@@ -84,7 +93,7 @@ class Window(QDialog):
         # to debug
         #print("data-", line)
         if(b'f' in line[:1]):
-            mydata = [(self.mult1 * self.mult2 * int(i)) for i in str(line[1:]).split(",")[1:][:-1]]
+            mydata = [(self.adcMultiplier[self.mulIndex] * (int(i)-2048)) for i in str(line[1:]).split(",")[1:][:-1]]
             #print("mydata", mydata)
             self.graphdata = mydata
             self.plot(False)
@@ -247,7 +256,7 @@ class Window(QDialog):
    
         # plot data
         ax.plot(self.graphdata[:100], '.-')
-        #plt.ylim([-1 * self.mult1 * self.mult2, self.mult1 * self.mult2])
+        plt.ylim([-1 * self.adcMultiplier[self.mulIndex] * 2048, self.adcMultiplier[self.mulIndex] * 2048])
 
         ax.grid()
    
