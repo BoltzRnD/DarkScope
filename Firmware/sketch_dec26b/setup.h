@@ -32,6 +32,7 @@ void initIO()  {
   while (!Serial) ;
 
   Serial.println("STM32 Oscilloscope Initializing...");
+  Serial.println("B:DarkScope V0.1");
   digitalWrite(BOARD_LED, LOW);
   
 }
