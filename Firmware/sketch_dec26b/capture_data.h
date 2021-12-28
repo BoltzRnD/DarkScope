@@ -12,9 +12,9 @@ void senseUpdate(){
     uint16_t vsense2 = analogRead(VSENSSEL2);
     uint16_t cplsel = analogRead(CPLSEL);
 
-    uint8_t vsensel1_val = ((vsense1 < 1365) ? 0 : ((vsense1 < 2731) ? 1 : 2));
-    uint8_t vsensel2_val = ((vsense2 < 1365) ? 0 : ((vsense2 < 2731) ? 1 : 2));
-    uint8_t cplsel_val = ((cplsel < 1365) ? 0 : ((cplsel < 2731) ? 1 : 2));
+    uint8_t vsensel1_val = ((vsense1 < 400) ? 0 : ((vsense1 < 2000) ? 1 : 2));
+    uint8_t vsensel2_val = ((vsense2 < 400) ? 0 : ((vsense2 < 2000) ? 1 : 2));
+    uint8_t cplsel_val = ((cplsel < 400) ? 0 : ((cplsel < 2000) ? 1 : 2));
     
     Serial.println("s1,"+(String)vsensel1_val);
     Serial.println("s2,"+(String)vsensel2_val);

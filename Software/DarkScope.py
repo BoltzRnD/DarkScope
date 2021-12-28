@@ -63,23 +63,23 @@ class Window(QDialog):
 
     def updateGraphLimits(self):
         if(self.sense1 == 0 and self.sense2 == 0):
-            self.mulIndex = 8
+            self.mulIndex = 0
         elif(self.sense1 == 0 and self.sense2 == 1):
-            self.mulIndex = 7
+            self.mulIndex = 1
         elif(self.sense1 == 0 and self.sense2 == 2):
-            self.mulIndex = 6
+            self.mulIndex = 2
         elif(self.sense1 == 1 and self.sense2 == 0):
-            self.mulIndex = 5
+            self.mulIndex = 3
         elif(self.sense1 == 1 and self.sense2 == 1):
             self.mulIndex = 4
         elif(self.sense1 == 1 and self.sense2 == 2):
-            self.mulIndex = 3
+            self.mulIndex = 5
         elif(self.sense1 == 2 and self.sense2 == 0):
-            self.mulIndex = 2
+            self.mulIndex = 6
         elif(self.sense1 == 2 and self.sense2 == 1):
-            self.mulIndex = 1
+            self.mulIndex = 7
         elif(self.sense1 == 2 and self.sense2 == 2):
-            self.mulIndex = 0
+            self.mulIndex = 8
 
         # plt.ylim([-1 * self.mult1 * self.mult2, self.mult1 * self.mult2])
 
@@ -89,14 +89,18 @@ class Window(QDialog):
         if not self.ser.is_open:
             return
 
+        self.ser.flush()
         line = self.ser.readline()
         # to debug
         #print("data-", line)
         if(b'f' in line[:1]):
-            mydata = [(self.adcMultiplier[self.mulIndex] * (int(i)-2048)) for i in str(line[1:]).split(",")[1:][:-1]]
-            #print("mydata", mydata)
-            self.graphdata = mydata
-            self.plot(False)
+            try:
+                mydata = [(self.adcMultiplier[self.mulIndex] * (int(i)-2048)) for i in str(line[1:]).split(",")[1:][:-1]]
+                #print("mydata", mydata)
+                self.graphdata = mydata
+                self.plot(False)
+            except(ValueError):
+                pass
         elif(b's1' in line[:2]):
             self.sense1 = int(line[3:])
             self.updateGraphLimits()
@@ -255,8 +259,8 @@ class Window(QDialog):
         ax = self.figure.add_subplot(111)
    
         # plot data
-        ax.plot(self.graphdata[:100], '.-')
-        plt.ylim([-1 * self.adcMultiplier[self.mulIndex] * 2048, self.adcMultiplier[self.mulIndex] * 2048])
+        ax.plot(self.graphdata, '.-')
+        #plt.ylim([-1 * self.adcMultiplier[self.mulIndex] * 2048, self.adcMultiplier[self.mulIndex] * 2048])
 
         ax.grid()
    
