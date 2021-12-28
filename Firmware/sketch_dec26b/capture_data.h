@@ -10,16 +10,15 @@ void senseUpdate(){
   if(micros() - sw_pos_lastms > SW_POS_UPDATE_TIME){
     uint16_t vsense1 = analogRead(VSENSSEL1);
     uint16_t vsense2 = analogRead(VSENSSEL2);
-    uint16_t cpsel = analogRead(CPLSEL);
+    uint16_t cplsel = analogRead(CPLSEL);
 
-    Serial.print('s');
-    Serial.print((vsense1 & 0xFF));
-    Serial.print((vsense1 >> 8) & 0xFF);
-    Serial.print((vsense2 & 0xFF));
-    Serial.print((vsense2 >> 8) & 0xFF);
-    Serial.print((cpsel & 0xFF));
-    Serial.print((cpsel >> 8) & 0xFF);
-    Serial.print('\n');
+    uint8_t vsensel1_val = ((vsense1 < 1365) ? 0 : ((vsense1 < 2731) ? 1 : 2));
+    uint8_t vsensel2_val = ((vsense2 < 1365) ? 0 : ((vsense2 < 2731) ? 1 : 2));
+    uint8_t cplsel_val = ((cplsel < 1365) ? 0 : ((cplsel < 2731) ? 1 : 2));
+    
+    Serial.println("s1,"+(String)vsensel1_val);
+    Serial.println("s2,"+(String)vsensel2_val);
+    Serial.println("s3,"+(String)cplsel_val);
 
     sw_pos_lastms = micros();
   }
@@ -36,6 +35,7 @@ void frameUpdate(){
   Serial.print('f');
   for(uint16_t i=0; i<2048; i++){
     Serial.print(data[i]);
+    Serial.print(',');
   }
   Serial.print('\n');
 }

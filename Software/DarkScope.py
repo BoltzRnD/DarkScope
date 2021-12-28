@@ -1,16 +1,108 @@
 # importing various libraries
 import sys
 from PyQt5 import QtGui, QtWidgets
+from PyQt5 import QtCore
 from PyQt5.QtCore import QRect
 from PyQt5.QtWidgets import QCheckBox, QComboBox, QDialog, QApplication, QDoubleSpinBox, QHBoxLayout, QLabel, QPushButton, QSpacerItem, QSpinBox, QVBoxLayout
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import matplotlib.pyplot as plt
 import random
-   
+import serial
+import serial.tools.list_ports as ports
+
 # main window
 # which inherits QDialog
 class Window(QDialog):
+    sense1 = 0
+    sense2 = 0
+    cplsel = 0
+
+    mult1 = 0.010
+    mult2 = 1
+
+    graphdata = []
+
+    def closeEvent(self, a0: QtGui.QCloseEvent) -> None:
+        try:
+            if(self.ser.is_open):
+                print("Disconnected to Port Successfully")
+                self.ser.close()
+        except:
+            pass
+        return super().closeEvent(a0)
+
+    def initConnect(self):
+        self.ser = serial.Serial(self.COMport.currentText(), 250000, timeout=0)
+        if self.ser.is_open:
+            print("Connected to Port Successfully")
+            self.connectionState.setText("Connected Successfully")
+            self.startLoop()
+
+    def startLoop(self):
+        # loop
+        self.timer = QtCore.QTimer(self)
+        self.timer.timeout.connect(self.updateData)
+        self.timer.start(1)
+
+    def stopLoop(self):
+        try:
+            self.timer.stop()
+        except:
+            pass
+    
+    def resumeLoop(self):
+        try:
+            self.timer.start(1)
+        except:
+            pass
+
+    def updateGraphLimits(self):
+        if(self.sense1 == 0):
+            self.mult1 = 0.010
+        elif(self.sense1 == 1):
+            self.mult1 = 0.1
+        elif(self.sense1 == 2):
+            self.mult1 = 1
+
+        if(self.sense2 == 0):
+            self.mult2 = 1
+        elif(self.sense2 == 1):
+            self.mult2 = 2
+        elif(self.sense2 == 2):
+            self.mult2 = 5
+
+        # plt.ylim([-1 * self.mult1 * self.mult2, self.mult1 * self.mult2])
+
+    # Fetch and Update Data and Switch Positions and Labels Accordingly
+    # to be called at same rate at which data is bieng recieved by DarkScope - 500Hz or Faster
+    def updateData(self):
+        if not self.ser.is_open:
+            return
+
+        line = self.ser.readline()
+        # to debug
+        #print("data-", line)
+        if(b'f' in line[:1]):
+            mydata = [(self.mult1 * self.mult2 * int(i)) for i in str(line[1:]).split(",")[1:][:-1]]
+            #print("mydata", mydata)
+            self.graphdata = mydata
+            self.plot(False)
+        elif(b's1' in line[:2]):
+            self.sense1 = int(line[3:])
+            self.updateGraphLimits()
+            print("s1-", self.sense1)
+        elif(b's2' in line[:2]):
+            self.sense2 = int(line[3:])
+            self.updateGraphLimits()
+            print("s2-", self.sense2)
+        elif(b's3' in line[:2]):
+            self.updateGraphLimits()
+            self.cplsel = int(line[3:])
+            print("s3-", self.cplsel)
+        else:
+            pass  
+
     # constructor
     def __init__(self, parent=None):
         super(Window, self).__init__(parent)
@@ -33,7 +125,7 @@ class Window(QDialog):
         self.button = QPushButton('Demo Push')
            
         # adding action to the button
-        self.button.clicked.connect(self.plot)
+        self.button.clicked.connect(lambda: self.plot(True))
 
         # Toolbox Layout
         master_toolbox = QVBoxLayout()
@@ -41,7 +133,10 @@ class Window(QDialog):
 
         self.devSelectLayout = QVBoxLayout()
         self.devSelectLayout.addWidget(QLabel("Select COM Port"))
-        self.COMport = QSpinBox()
+        self.COMport = QComboBox()
+        com_ports = list(ports.comports())
+        for x in com_ports:
+            self.COMport.addItem(x.device)
         self.connectButton = QPushButton("Connect")
         self.connectionState = QLabel("Not Connected")
         self.devSelectLayout.addWidget(self.COMport)
@@ -130,15 +225,19 @@ class Window(QDialog):
            
         # Widget Connections
         self.appCloseButton.clicked.connect(self.close)
+        self.connectButton.clicked.connect(self.initConnect)
+        self.button_Run.clicked.connect(self.resumeLoop)
+        self.button_Stop.clicked.connect(self.stopLoop)
         
         # setting layout to the main window
         self.setLayout(layout)
    
     # action called by thte push button
-    def plot(self):
-           
-        # random data
-        data = [random.random() for i in range(10)]
+    def plot(self, _random):
+        
+        if(_random):
+            # random data
+            self.graphdata = [random.random() for i in range(2048)]
    
         # clearing old figure
         self.figure.clear()
@@ -147,7 +246,8 @@ class Window(QDialog):
         ax = self.figure.add_subplot(111)
    
         # plot data
-        ax.plot(data, '.-')
+        ax.plot(self.graphdata[:100], '.-')
+        #plt.ylim([-1 * self.mult1 * self.mult2, self.mult1 * self.mult2])
 
         ax.grid()
    
@@ -167,6 +267,5 @@ if __name__ == '__main__':
     main.show()
 
     main.showFullScreen()
-   
-    # loop
+
     sys.exit(app.exec_())
